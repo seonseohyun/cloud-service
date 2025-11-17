@@ -1,0 +1,66 @@
+# ===========================
+# Build directories
+# ===========================
+build/
+build_*/
+cmake-build-*/
+out/
+bin/
+obj/
+
+# ===========================
+# CMake generated files
+# ===========================
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.cmake
+
+# ===========================
+# Qt related
+# ===========================
+*.user
+*.pro.user
+*.qbs.user
+*.qmlc
+*.jsc
+*.moc
+moc_*
+ui_*
+qrc_*
+
+# ===========================
+# OS trash / temp
+# ===========================
+.DS_Store
+Thumbs.db
+
+# ===========================
+# IDE specific
+# ===========================
+.vscode/
+.idea/
+*.iml
+.ipynb_checkpoints/
+
+# ===========================
+# Logs
+# ===========================
+*.log
+
+# ===========================
+# Keys / credentials
+# ===========================
+*.pem
+*.key
+*.crt
+*.pfx
+.env
+.env.*
+
+# ===========================
+# Python optional (AI 태깅 옵션)
+# ===========================
+__pycache__/
+*.pyc
