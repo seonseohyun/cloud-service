@@ -4,6 +4,7 @@
 #include <mariadb/mysql.h>
 
 class DBManager {
+    
 public:
     DBManager();
     ~DBManager();

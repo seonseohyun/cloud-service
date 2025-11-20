@@ -15,10 +15,32 @@ file(GLOB_RECURSE SOURCES
 )
 
 # 실행 파일
-add_executable(cloud_server ${SOURCES})
+add_executable(cloud_server
+    ${SRC_DIR}/main.cpp
+    ${SRC_DIR}/AppSever.cpp
+    ${SRC_DIR}/Router.cpp
+    ${SRC_DIR}/AuthController.cpp
+    ${SRC_DIR}/DBManager.cpp
+)
 
 # 헤더 찾을 경로 등록
 target_include_directories(cloud_server PRIVATE
     ${INC_DIR}
-    ${LIB_DIR}
+)
+
+# === MariaDB Connector/C 설정 ===
+
+# MariaDB 설치 루트
+set(MARIADB_ROOT /opt/homebrew/Cellar/mariadb-connector-c/3.4.7)
+
+# 헤더 경로
+target_include_directories(cloud_server
+    PRIVATE
+        ${MARIADB_ROOT}/include
+)
+
+# 라이브러리 파일 “직접” 지정
+target_link_libraries(cloud_server
+    PRIVATE
+        ${MARIADB_ROOT}/lib/libmariadb.3.dylib
 )

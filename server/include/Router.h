@@ -6,4 +6,8 @@
 class Router {
 public:
     void registerRoutes(httplib::Server& svr);
+
+private:
+    AuthController auth;
+    // FileController files;
 };
