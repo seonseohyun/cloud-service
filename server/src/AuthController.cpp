@@ -20,16 +20,16 @@ void AuthController::login(const httplib::Request& req, httplib::Response& res) 
     res.set_content(resp.dump(), "application/json");
 }
 
-// void AuthController::signup(const httplib::Request& req, httplib::Response& res) {
-//     json body = json::parse(req.body, nullptr, false);
-//     if (!body.is_object()) {
-//         res.status = 400;
-//         return;
-//     }
+void AuthController::signup(const httplib::Request& req, httplib::Response& res) {
+    json body = json::parse(req.body, nullptr, false);
+    if (!body.is_object()) {
+        res.status = 400;
+        return;
+    }
 
-//     bool ok = db.createUser(body["id"], body["pw"], body["email"]);
+    bool ok = db.createUser(body["id"], body["pw"], body["name"], body["email"]);
 
-//     json resp;
-//     resp["result"] = ok ? "success" : "fail";
-//     res.set_content(resp.dump(), "application/json");
-// }
+    json resp;
+    resp["result"] = ok ? "success" : "fail";
+    res.set_content(resp.dump(), "application/json");
+}

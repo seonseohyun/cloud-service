@@ -8,7 +8,7 @@ void Router::registerRoutes(httplib::Server& svr) {
 
     // Auth
     svr.Post("/login", [this](const auto& req, auto& res) { auth.login(req, res); });
-    // svr.Post("/signup", [this](const auto& req, auto& res) { auth.signup(req, res); });
+    svr.Post("/signup", [this](const auto& req, auto& res) { auth.signup(req, res); });
 
     // // Files
     // svr.Post("/files/upload", [&](const auto& req, auto& res) { files.upload(req, res); });

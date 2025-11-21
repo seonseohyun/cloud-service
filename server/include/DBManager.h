@@ -10,7 +10,7 @@ public:
     ~DBManager();
 
     bool checkLogin(const std::string& id, const std::string& pw);
-//     bool createUser(const std::string& id, const std::string& pw, const std::string& email);
+    bool createUser(const std::string& id, const std::string& pw, const std::string& name, const std::string& email);
 
 private:
     MYSQL* conn; //커넥터 핸들
